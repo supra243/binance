@@ -53,7 +53,7 @@ def coin_api_get_exchange_rates(assets, start_date, end_date):
         print("L'appel à l'API a fonctionné")
         data = json.loads(response.text)
         # print(data)
-        print("Quota restant:", response.headers["x-ratelimit-remaining"])
+        print("Quota restant:", response.headers["x-ratelimit-quota-remaining"])
         return data
     else:
         print("L'appel à l'API a retourné une erreur:", response.status_code)
